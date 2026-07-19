@@ -41,11 +41,13 @@ The rejected-edit visual heuristic was false in this evidence run; this is retai
 
 ## Release Bundles
 
-| Bundle | Size | SHA-256 |
-|---|---:|---|
-| `codex3d-hackathon-0.1.0-source.zip` | 573,062 bytes | `6946a5b71ccd84246bfca0d0433f2c760ea64b96edd8c2390b7b222cfee39cc8` |
-| `codex3d-blender-extension-0.1.0.zip` | 41,668 bytes | `f415bd79906321deab04354415dfd85226a1c0d71dea4fb851f1a73f02fc9449` |
-| `codex3d-demo-assets-0.1.0.zip` | 2,347,019 bytes | `098dafbfc081511d2c68a502c4c936d90eed10cf931b59fddd83e3be1014e19d` |
+| Bundle | Size target |
+|---|---:|
+| `codex3d-hackathon-0.1.0-source.zip` | under 10 MiB |
+| `codex3d-blender-extension-0.1.0.zip` | under 1 MiB |
+| `codex3d-demo-assets-0.1.0.zip` | under 10 MiB |
+
+Final byte sizes and SHA-256 values are generated after documentation is frozen and recorded only in `release/SHA256SUMS` and `release/preflight.json`; the source archive deliberately does not embed its own checksum.
 
 No 72-frame sequence, historical rerun, raw conversation/tool trace, Blender log, local token, or private path is included.
 

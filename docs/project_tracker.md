@@ -71,7 +71,7 @@ Overall status: CONDITIONALLY_READY. The MIT-licensed local Git RC, English judg
 | Hackathon Sprint 02D | Demo hardening: MP4 boundary, snapshots, stable UUID, visual polish, GUI acceptance | DONE | 144 tests; 23 MCP tools; 14 persistent UUIDs; real restore; polished preview; H.264 MP4; visible 72-frame GUI loop; user-confirmed acceptance |
 | Synthetic User Test UT-01 | Persistent novice-language multi-turn creation, feedback, rollback and delivery | SYNTHETIC_PASS | 100/100; 133 MCP calls; exact Turn 6 restore; versioned final `.blend`; composition-safe PNG; valid H.264 MP4; clean shutdown |
 | UT-01 Reliability Repair | Approval-safe restore/save, delivery guard, isolated scene, compact inspection and visibility validation | DONE | 153 default tests; real Blender restore regression; unchanged nine-turn rerun passed; inspection payload reduced 91.1% |
-| OpenAI Build Week RC | License, repository hygiene, judge documentation, GPT-5.6 evidence, release bundles and clean-room audit | CONDITIONALLY_READY | GPT-5.6 Target run passed 100/100; source 573,062 bytes; Extension 41,668 bytes; demo assets 2,347,019 bytes; clean-room 153/3 passed |
+| OpenAI Build Week RC | License, repository hygiene, judge documentation, GPT-5.6 evidence, release bundles and clean-room audit | CONDITIONALLY_READY | GPT-5.6 Target run passed 100/100; source under 1 MiB; all bundles under 3 MiB; clean-room 153/3 passed |
 
 ## Next Actions
 
