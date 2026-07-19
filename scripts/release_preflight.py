@@ -8,6 +8,7 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import zipfile
 from pathlib import Path
 from typing import Any
@@ -31,6 +32,41 @@ def _run(command: list[str]) -> dict[str, Any]:
         "returncode": completed.returncode,
         "summary": (completed.stdout + completed.stderr).strip().splitlines()[-1:] or [""],
     }
+
+
+def _clean_room(source_zip: Path) -> dict[str, Any]:
+    if not source_zip.is_file():
+        return {"status": "FAILED", "reason": "source_zip_missing"}
+    with tempfile.TemporaryDirectory(prefix="codex3d_release_preflight_") as temporary:
+        root = Path(temporary)
+        with zipfile.ZipFile(source_zip) as archive:
+            archive.extractall(root)
+        env = dict(os.environ)
+        env["PYTHONPATH"] = os.pathsep.join(
+            str(root / path) for path in ("packages/protocol", "apps/api", "connectors/blender_addon")
+        )
+        commands = {
+            "compile": [sys.executable, "-m", "compileall", "-q", str(root)],
+            "tests": [sys.executable, "-m", "pytest", str(root), "-q"],
+            "extension": [
+                sys.executable,
+                str(root / "scripts/build_blender_extension.py"),
+                "--output",
+                str(root / "extension.zip"),
+            ],
+            "judge_smoke": [sys.executable, str(root / "examples/hackathon_sprint_01_demo.py")],
+        }
+        results: dict[str, Any] = {}
+        for name, command in commands.items():
+            completed = subprocess.run(command, cwd=root, env=env, text=True, capture_output=True, check=False)
+            results[name] = {
+                "status": "PASSED" if completed.returncode == 0 else "FAILED",
+                "returncode": completed.returncode,
+                "summary": (completed.stdout + completed.stderr).strip().splitlines()[-1:] or [""],
+            }
+            if completed.returncode:
+                return {"status": "FAILED", "steps": results}
+        return {"status": "PASSED", "steps": results}
 
 
 def _version(command: list[str]) -> str | None:
@@ -72,7 +108,7 @@ def _scan_zip(path: Path) -> dict[str, Any]:
     return {"status": "PASSED" if not findings else "FAILED", "findings": findings}
 
 
-def preflight(run_tests: bool) -> dict[str, Any]:
+def preflight(run_tests: bool, clean_room: bool = False) -> dict[str, Any]:
     zips = sorted(RELEASE.glob("*.zip"))
     scans = {path.name: _scan_zip(path) for path in zips}
     required = [
@@ -104,6 +140,11 @@ def preflight(run_tests: bool) -> dict[str, Any]:
     tests = _run([sys.executable, "-m", "pytest"]) if run_tests else {"status": "NOT_RUN"}
     compile_smoke = _run([sys.executable, "-m", "compileall", "-q", "apps", "packages", "connectors", "examples", "scripts", "tests"])
     extension_build = _run([sys.executable, "scripts/build_blender_extension.py"])
+    clean_room_result = (
+        _clean_room(RELEASE / "codex3d-hackathon-0.1.0-source.zip")
+        if clean_room
+        else {"status": "NOT_RUN"}
+    )
     all_scans_pass = bool(zips) and all(item["status"] == "PASSED" for item in scans.values())
     files_pass = all((ROOT / path).is_file() for path in required)
     blockers = [key for key, value in rules.items() if value in {"PENDING_USER", "UNVERIFIED"}]
@@ -127,6 +168,7 @@ def preflight(run_tests: bool) -> dict[str, Any]:
             "default_tests": tests,
             "compile_smoke": compile_smoke,
             "extension_build": extension_build,
+            "clean_room": clean_room_result,
             "release_zip_scan": scans,
             "artifacts_ignored": {"status": "PASSED" if "artifacts/" in (ROOT / ".gitignore").read_text() else "FAILED"},
         },
@@ -148,8 +190,9 @@ def preflight(run_tests: bool) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Audit Codex3D release readiness.")
     parser.add_argument("--run-tests", action="store_true")
+    parser.add_argument("--clean-room", action="store_true")
     args = parser.parse_args()
-    result = preflight(args.run_tests)
+    result = preflight(args.run_tests, args.clean_room)
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0 if result["status"] != "NOT_READY" else 1
 
