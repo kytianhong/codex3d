@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local outputs
+*.blend1
+*.blend2
+renders/
+tmp/
+artifacts/
+release/
+dist/
+frames/
+**/frames/
+*.log
+*tool_trace*.jsonl
+*conversation*.jsonl
+*.token
+*.secret
+.codex-ephemeral*/
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/

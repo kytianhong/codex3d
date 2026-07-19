@@ -1,0 +1,89 @@
+{
+  "evidence_version": "1.0",
+  "generated_at": "2026-07-19T23:52:00Z",
+  "primary_build_task": {
+    "task_id": "019f7749-0bc7-7733-9d9a-17a37e273539",
+    "model": "gpt-5.6-sol",
+    "evidence": "Local Codex thread_settings_applied records show gpt-5.6-sol throughout the core implementation period beginning 2026-07-18.",
+    "feedback_session_id": null
+  },
+  "target_codex_acceptance": {
+    "session_id": "019f7c8d-f534-7ef3-a6ce-69ca7fbc7cd2",
+    "model": "gpt-5.6-sol",
+    "model_evidence": "The persisted Target Codex session records model=gpt-5.6-sol in turn settings.",
+    "runner": "unchanged nine-turn synthetic novice workflow with an explicit model override",
+    "prompt_sequence": [
+      "Inspect the blank isolated scene and do not touch other projects.",
+      "Create an original six-stream glowing-core 3D icon and show progress in Blender.",
+      "Make it read as a layered computational energy device while preserving six interwoven curves.",
+      "Place it in restrained deep-space art direction with dark metal, warm gold, and blue-white energy.",
+      "Create a three-second looping orbit, breathing core, and gentle camera move.",
+      "Slow the motion and keep the whole approved emblem visible without changing its colors or six-curve structure.",
+      "Apply a deliberately rejected bright-purple and oversized-core revision.",
+      "Restore the previously approved version.",
+      "Save the Blender project and deliver a final preview and MP4."
+    ],
+    "result": "SYNTHETIC_PASS",
+    "score": 100,
+    "elapsed_seconds": 397.15224,
+    "mcp_call_count": 146,
+    "failed_mcp_call_count": 0,
+    "tool_call_summary": {
+      "blender_assign_material": 54,
+      "blender_configure_world": 1,
+      "blender_create_camera": 1,
+      "blender_create_curve": 9,
+      "blender_create_primitive": 27,
+      "blender_create_snapshot": 1,
+      "blender_execute_batch": 1,
+      "blender_inspect_scene": 17,
+      "blender_keyframe_object": 20,
+      "blender_render": 4,
+      "blender_restore_snapshot": 1,
+      "blender_save_checkpoint": 1,
+      "blender_set_light": 1,
+      "blender_set_point_light": 2,
+      "blender_transform_object": 6
+    },
+    "restore": {
+      "status": "PASSED",
+      "accepted_fingerprint": "25d3c41dda15480f2d9e5d168f62c01b5d9f8871c55cbd47eaf5dc8dc3d20120",
+      "restored_fingerprint": "25d3c41dda15480f2d9e5d168f62c01b5d9f8871c55cbd47eaf5dc8dc3d20120",
+      "uuid_material_camera_animation_match": true
+    },
+    "artifacts": {
+      "final_scene.blend": {
+        "size": 161947,
+        "sha256": "4d9e81f9886e0959d856e6f80e753243adace62ea76b2cfdf1bf575a704f2e7c"
+      },
+      "preview_final.png": {
+        "size": 533016,
+        "sha256": "5f0f585ac928172624e2748d6d25ccf65e6d2df2d4f42c23dee076a81dd52c05"
+      },
+      "codex_space_animation.mp4": {
+        "size": 186605,
+        "sha256": "a5eb2b267be378c32a0facbecaa9419d57d972ba647018d896e71edc5d99d5ae",
+        "codec": "h264",
+        "pixel_format": "yuv420p",
+        "resolution": [720, 720],
+        "fps": 24,
+        "frames": 72,
+        "duration_seconds": 3.0,
+        "full_decode": "PASSED"
+      }
+    },
+    "honest_notes": [
+      "The target was real Codex using MCP against an isolated Blender process; deterministic scene construction did not replace it.",
+      "The rejected-edit obvious-change heuristic was false in this run, but restore fingerprints differed before restore and matched exactly afterward.",
+      "This is synthetic functional evidence, not a human usability study."
+    ],
+    "safety": {
+      "token_absent": true,
+      "global_codex_config_unchanged": true,
+      "user_blend_opened": false,
+      "arbitrary_python_or_shell_used": false,
+      "blender_reaped": true,
+      "bridge_port_released": true
+    }
+  }
+}

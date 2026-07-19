@@ -1,0 +1,24 @@
+schema_version = "1.0.0"
+
+id = "codex3d_blender_connector"
+version = "0.1.0"
+name = "Codex3D Blender Connector"
+tagline = "Drive structured 3D actions through a secure local bridge"
+maintainer = "Codex3D Project"
+type = "add-on"
+blender_version_min = "4.2.0"
+platforms = ["macos-arm64"]
+license = ["SPDX:LicenseRef-Codex3D-Internal"]
+
+[permissions]
+network = "Accept structured actions from localhost"
+clipboard = "Copy localhost connection details"
+files = "Write user-selected Codex3D render and checkpoint artifacts"
+
+[build]
+paths_exclude_pattern = [
+  "__pycache__/",
+  "*.pyc",
+  "tests/",
+  ".DS_Store",
+]

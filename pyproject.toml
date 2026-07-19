@@ -1,0 +1,29 @@
+[project]
+name = "codex3d"
+version = "0.1.0"
+description = "Local-first natural-language Blender creation with structured tools, validation, and safe restore."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Codex3D contributors" }]
+requires-python = ">=3.10"
+dependencies = []
+keywords = ["blender", "codex", "mcp", "3d", "creative-tools", "local-first"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Multimedia :: Graphics :: 3D Modeling",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["packages/protocol", "packages/tools", "apps/api", "apps/mcp", "connectors/blender_addon"]
+testpaths = [
+    "packages/protocol/tests",
+    "packages/tools/tests",
+    "apps/api/tests",
+    "apps/mcp/tests",
+    "connectors/blender_addon/tests",
+    "tests/integration",
+    "tests/e2e",
+]
