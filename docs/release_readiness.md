@@ -23,7 +23,7 @@ The official Rules state a July 21, 2026, 5:00 PM Pacific deadline; require a wo
 | English submission materials | PASSED | README, submission draft, architecture, security, notices, demo script |
 | Install/test without rebuilding | PASSED | Prebuilt Extension ZIP plus fake-backend smoke path |
 | License and provenance | PASSED | MIT LICENSE and third-party notices |
-| Public/private repository URL | PENDING USER | Local clean Git RC is prepared; remote is intentionally not created or pushed yet |
+| Public/private repository URL | PASSED | Public MIT repository: https://github.com/kytianhong/codex3d |
 | Public narrated YouTube video under 3 minutes | PENDING USER | Complete 2:45 script and checklist exist; recording/upload required |
 | Primary `/feedback` Session ID | PENDING USER | Search found no completed `/feedback` result; run `/feedback` in task `019f7749-0bc7-7733-9d9a-17a37e273539` |
 | Entrant display name and eligibility | UNVERIFIED | Individual entry confirmed; display/legal submission details still required |
@@ -44,7 +44,7 @@ The primary build task metadata records `gpt-5.6-sol` throughout core implementa
 
 ## Repository Plan
 
-Use a **public GitHub repository** for the simplest judge path after the owner creates or confirms the destination. This local RC is MIT licensed and has a clean initial history that excludes 468 MB of raw artifacts. No remote was guessed or published, and no GitHub CLI is installed on this machine.
+The public repository is https://github.com/kytianhong/codex3d. GitHub reports `PUBLIC`, default branch `main`, and MIT License. The clean history excludes 468 MB of raw artifacts.
 
 Suggested release tag after remote review: `hackathon-v0.1.0`.
 
@@ -54,4 +54,4 @@ Suggested release tag after remote review: `hackathon-v0.1.0`.
 
 ## Decision
 
-The code and local release candidate are ready for judging, but the overall submission is not yet `SUBMISSION_READY`. The remaining user-owned submission items are the public repository URL, public narrated YouTube URL, `/feedback` Session ID, entrant display name, and Devpost form confirmation.
+The code and public release candidate are ready for judging, but the overall submission is not yet `SUBMISSION_READY`. The remaining user-owned submission items are the public narrated YouTube URL, `/feedback` Session ID, entrant display name, and Devpost form confirmation.

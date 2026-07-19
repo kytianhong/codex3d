@@ -7,7 +7,7 @@
 - **Track:** Apps for Your Life
 - **Entrant:** Individual
 - **Entrant display name:** TO BE PROVIDED
-- **Repository URL:** TO BE PROVIDED
+- **Repository URL:** https://github.com/kytianhong/codex3d
 - **Public YouTube URL:** TO BE PROVIDED
 - **Primary `/feedback` Session ID:** TO BE PROVIDED
 

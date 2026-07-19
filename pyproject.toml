@@ -16,6 +16,11 @@ classifiers = [
     "Topic :: Multimedia :: Graphics :: 3D Modeling",
 ]
 
+[project.urls]
+Homepage = "https://github.com/kytianhong/codex3d"
+Repository = "https://github.com/kytianhong/codex3d"
+Issues = "https://github.com/kytianhong/codex3d/issues"
+
 [tool.pytest.ini_options]
 pythonpath = ["packages/protocol", "packages/tools", "apps/api", "apps/mcp", "connectors/blender_addon"]
 testpaths = [

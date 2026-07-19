@@ -115,12 +115,15 @@ def preflight(run_tests: bool, clean_room: bool = False) -> dict[str, Any]:
         "README.md", "LICENSE", "SECURITY.md", "THIRD_PARTY_NOTICES.md",
         "HACKATHON_SUBMISSION.md", "DEMO_SCRIPT.md", "docs/architecture_submission.md",
     ]
+    configured_remote = subprocess.run(
+        ["git", "remote", "get-url", "origin"], cwd=ROOT, text=True, capture_output=True, check=False
+    ).stdout.strip() or None
     rules = {
         "deadline_2026_07_21_5pm_pdt": "VERIFIED",
         "apps_for_your_life_track": "VERIFIED",
         "codex_and_gpt56_required": "VERIFIED",
         "public_youtube_under_3_minutes_with_audio": "PENDING_USER",
-        "licensed_repo_url_and_access": "PENDING_USER",
+        "licensed_repo_url_and_access": "PASSED" if configured_remote else "PENDING_USER",
         "feedback_session_id": "PENDING_USER",
         "english_materials": "PASSED",
         "entrant_eligibility_and_display_name": "UNVERIFIED",
@@ -133,9 +136,7 @@ def preflight(run_tests: bool, clean_room: bool = False) -> dict[str, Any]:
         git_status["tag"] = subprocess.run(
             ["git", "tag", "--points-at", "HEAD"], cwd=ROOT, text=True, capture_output=True, check=False
         ).stdout.strip() or None
-        git_status["remote"] = subprocess.run(
-            ["git", "remote", "get-url", "origin"], cwd=ROOT, text=True, capture_output=True, check=False
-        ).stdout.strip() or None
+        git_status["remote"] = configured_remote
 
     tests = _run([sys.executable, "-m", "pytest"]) if run_tests else {"status": "NOT_RUN"}
     compile_smoke = _run([sys.executable, "-m", "compileall", "-q", "apps", "packages", "connectors", "examples", "scripts", "tests"])
