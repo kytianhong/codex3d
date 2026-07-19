@@ -24,6 +24,7 @@ The official Rules state a July 21, 2026, 5:00 PM Pacific deadline; require a wo
 | Install/test without rebuilding | PASSED | Prebuilt Extension ZIP plus fake-backend smoke path |
 | License and provenance | PASSED | MIT LICENSE and third-party notices |
 | Public/private repository URL | PASSED | Public MIT repository: https://github.com/kytianhong/codex3d |
+| Annotated release tag and assets | PASSED | https://github.com/kytianhong/codex3d/releases/tag/hackathon-v0.1.0; downloaded assets match SHA256SUMS |
 | Public narrated YouTube video under 3 minutes | PENDING USER | Complete 2:45 script and checklist exist; recording/upload required |
 | Primary `/feedback` Session ID | PENDING USER | Search found no completed `/feedback` result; run `/feedback` in task `019f7749-0bc7-7733-9d9a-17a37e273539` |
 | Entrant display name and eligibility | UNVERIFIED | Individual entry confirmed; display/legal submission details still required |
@@ -47,6 +48,8 @@ The primary build task metadata records `gpt-5.6-sol` throughout core implementa
 The public repository is https://github.com/kytianhong/codex3d. GitHub reports `PUBLIC`, default branch `main`, and MIT License. The clean history excludes 468 MB of raw artifacts.
 
 Suggested release tag after remote review: `hackathon-v0.1.0`.
+
+Published release: https://github.com/kytianhong/codex3d/releases/tag/hackathon-v0.1.0. The tag resolves to release commit `9b147b583006f3296740c1b860582dcd0cebbe5b`.
 
 ## Video Status
 

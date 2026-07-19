@@ -8,7 +8,7 @@ Current phase: Hackathon Release Candidate
 
 Current round: OpenAI Build Week submission packaging
 
-Overall status: CONDITIONALLY_READY. The public MIT repository, English judge materials, GPT-5.6 evidence, deterministic release bundles, secrets/path audit, and clean-room reproduction pass. GitHub Release publication is in progress. Narrated YouTube URL, entrant display name, and the primary task `/feedback` Session ID remain submission blockers.
+Overall status: CONDITIONALLY_READY. The public MIT repository, annotated tag, GitHub Release, English judge materials, GPT-5.6 evidence, deterministic release bundles, secrets/path audit, and clean-room reproduction pass. Narrated YouTube URL, entrant display name, and the primary task `/feedback` Session ID remain submission blockers.
 
 ## Completion Table
 
@@ -71,14 +71,14 @@ Overall status: CONDITIONALLY_READY. The public MIT repository, English judge ma
 | Hackathon Sprint 02D | Demo hardening: MP4 boundary, snapshots, stable UUID, visual polish, GUI acceptance | DONE | 144 tests; 23 MCP tools; 14 persistent UUIDs; real restore; polished preview; H.264 MP4; visible 72-frame GUI loop; user-confirmed acceptance |
 | Synthetic User Test UT-01 | Persistent novice-language multi-turn creation, feedback, rollback and delivery | SYNTHETIC_PASS | 100/100; 133 MCP calls; exact Turn 6 restore; versioned final `.blend`; composition-safe PNG; valid H.264 MP4; clean shutdown |
 | UT-01 Reliability Repair | Approval-safe restore/save, delivery guard, isolated scene, compact inspection and visibility validation | DONE | 153 default tests; real Blender restore regression; unchanged nine-turn rerun passed; inspection payload reduced 91.1% |
-| OpenAI Build Week RC | License, repository hygiene, judge documentation, GPT-5.6 evidence, release bundles and clean-room audit | CONDITIONALLY_READY | Public repo published at `kytianhong/codex3d`; GPT-5.6 Target 100/100; clean-room 153/3 passed; GitHub Release next |
+| OpenAI Build Week RC | License, repository hygiene, judge documentation, GPT-5.6 evidence, release bundles and clean-room audit | CONDITIONALLY_READY | Public repo and `hackathon-v0.1.0` Release verified; GPT-5.6 Target 100/100; clean-room 153/3 passed |
 
 ## Next Actions
 
 1. Run `/feedback` in primary task `019f7749-0bc7-7733-9d9a-17a37e273539` and record the returned Session ID.
-2. Publish and verify annotated tag `hackathon-v0.1.0` and its GitHub Release assets.
-3. Record and publish the narrated sub-three-minute YouTube demo using `DEMO_SCRIPT.md`.
-4. Fill the entrant display name, video URL, and `/feedback` ID in the Devpost draft before the deadline.
+2. Record and publish the narrated sub-three-minute YouTube demo using `DEMO_SCRIPT.md` and `docs/youtube_submission.md`.
+3. Fill the entrant display name, video URL, and `/feedback` ID in the Devpost draft before the deadline.
+4. The entrant must personally confirm Devpost declarations and perform the final Submit action.
 
 ## Update Template
 

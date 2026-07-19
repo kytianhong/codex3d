@@ -8,6 +8,7 @@
 - **Entrant:** Individual
 - **Entrant display name:** TO BE PROVIDED
 - **Repository URL:** https://github.com/kytianhong/codex3d
+- **Release URL:** https://github.com/kytianhong/codex3d/releases/tag/hackathon-v0.1.0
 - **Public YouTube URL:** TO BE PROVIDED
 - **Primary `/feedback` Session ID:** TO BE PROVIDED
 
